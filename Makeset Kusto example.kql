@@ -1,0 +1,13 @@
+//This is the IP reference that I want to test with. 
+let IPAddresses = materialize (CIIPAndNetworkAdapter
+|where isnotempty( IPs)
+|distinct IPs);
+//this is the subsetof ranges that I want to compare to and use as referecne for the Make_Set() function
+let MenMice = materialize (MMIPRange
+|where RangeTitle !has ":"
+|project RangeTitle,Title, SubnetType
+|where isnotempty( SubnetType));
+//This will Make a JSON set of IP Addresses that correlate to the SubnetType May help getting a number view of how many devices in each type of subnet. 
+IPAddresses
+| evaluate ipv4_lookup(MenMice, IPs, RangeTitle)
+| summarize IP = make_set(IPs) by SubnetType
