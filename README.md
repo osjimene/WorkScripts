@@ -18,6 +18,17 @@ After downloading the repository, you can install any dependencies by running:
 
 `pip install -r requirements.txt`
 
+For Authentication, Make sure you have installed the Az.Accounts Powershell module to get your Access Token when making API calls. 
+
+Installation Command:
+`Install-Module -Name Az.Accounts -Repository PSGallery -Force`
+
+Once the module is installed, you can import it using the following command:
+
+`Import-Module Az.Accounts`
+
+After importing the module, you can use the Connect-AzAccount cmdlet to authenticate with Azure AD and ARM.
+
 ## Usage
 
 To use a script, navigate to the directory where the script is located and run:
