@@ -10,7 +10,8 @@ scripts = {
     "Get ObjectIds from GraphAPI": "GetObjectIds.py",
     "Get Elevations Query for Kusto": "GetElevationsQuery.py",
     "Comparison Script": "Comparison Script.py",
-    "Query for New Standard Users": "NewUser Query.py"
+    "Query for New Standard Users": "NewUser Query.py",
+    "Query to add Azure Subscriptions to ServiceTree": "ServiceTreeAPI.py"
 }
 
 # Show the choicebox and get the user's selection
